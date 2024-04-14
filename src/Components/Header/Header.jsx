@@ -11,7 +11,7 @@ const Header = () => {
           <span>
             <MdHome className="me-1" />
           </span>
-          <span>Home</span>
+          <span className="font-poppins">Home</span>
         </NavLink>
       </li>
       <li>
@@ -19,7 +19,7 @@ const Header = () => {
           <span>
             <IoIosBulb className="me-1" />
           </span>
-          <span>About</span>
+          <span className="font-poppins">About</span>
         </NavLink>
       </li>
       <li>
@@ -27,7 +27,7 @@ const Header = () => {
           <span>
             <AiFillProfile className="me-1" />
           </span>
-          <span>Update Profile</span>
+          <span className="font-poppins">Update Profile</span>
         </NavLink>
       </li>
     </>
@@ -64,13 +64,27 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="text-white text-xl">My Project</a>
+          <a className="text-white text-xl lg:text-2xl font-roboto">E-State</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="flex gap-6 px-1 text-white text-lg">{navLinks}</ul>
         </div>
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn btn-ghost btn-circle avatar"
+        ></div>
         <div className="navbar-end">
-          <a className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg">Log In</a>
+          <div className="w-10 mr-3">
+            <img
+              alt="Tailwind CSS Navbar component"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              className="rounded-full"
+            />
+          </div>
+          <a className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto">
+            Log In
+          </a>
         </div>
       </div>
     </div>
