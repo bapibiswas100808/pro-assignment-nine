@@ -13,8 +13,8 @@
   },
   {
     "id": "002",
-    "estate_title": "Modern Downtown Condo",
-    "segment_name": "Residential",
+    "estate_title": "Modern Downtown",
+    "segment_name": "Commercial",
     "description": "Sleek, modern condo in the heart of the city with easy access to public transportation and nightlife.",
     "price": "850,000",
     "Status": "sale",
@@ -37,7 +37,7 @@
   },
   {
     "id": "004",
-    "estate_title": "Executive High-Rise Suite",
+    "estate_title": "Executive High-Rise",
     "segment_name": "Commercial",
     "description": "Luxurious high-rise suite in a prestigious building, ideal for top executives and professionals.",
     "price": "5000",
