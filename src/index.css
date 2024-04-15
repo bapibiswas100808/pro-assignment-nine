@@ -14,3 +14,6 @@
   color: #ff3e55 !important;
   background-color: none;
 }
+#map {
+  height: 180px;
+}

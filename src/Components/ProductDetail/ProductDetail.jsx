@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import "animate.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -8,12 +9,12 @@ const ProductDetail = () => {
   );
   return (
     <div className="max-w-[1170px] mx-auto">
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-4 animate__animated animate__fadeInLeft">
             <img src={requiredData.image} className=" rounded-lg shadow-2xl" />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 animate__animated animate__fadeInRight">
             <h1 className="text-2xl lg:text-5xl font-bold font-roboto">
               {requiredData.estate_title}
             </h1>

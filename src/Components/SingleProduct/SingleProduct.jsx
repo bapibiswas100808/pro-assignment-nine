@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 
 const SingleProduct = ({ product }) => {
   return (
-    <div className="card border">
+    <div
+      className="card border"
+      data-aos="flip-right"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000"
+    >
       <figure>
         <img src={product.image} alt="Shoes" />
       </figure>

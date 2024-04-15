@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "animate.css";
 
 import slider1 from "../../assets/images/slide1.jpg";
 import slider2 from "../../assets/images/slide2.jpg";
@@ -29,7 +30,7 @@ const Banner = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
       autoplay={{
-        delay: 2500,
+        delay: 3500,
         disableOnInteraction: false,
       }}
     >
@@ -43,9 +44,9 @@ const Banner = () => {
           >
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
-              <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">E-State</h1>
-                <p className="mb-5 font-poppins">
+              <div className="max-w-lg animate__animated animate__fadeInRight">
+                <h1 className="mb-5 text-5xl font-bold">E-Estate</h1>
+                <p className="mb-5 font-poppins animate__rubberBand">
                   E-State Real Estate Company excels in delivering innovative,
                   eco-friendly living solutions, emphasizing sustainability and
                   modern design in prime urban and suburban locations
@@ -68,8 +69,8 @@ const Banner = () => {
           >
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
-              <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">E-State</h1>
+              <div className="max-w-lg animate__animated animate__fadeInRight">
+                <h1 className="mb-5 text-5xl font-bold ">E-Estate</h1>
                 <p className="mb-5 font-poppins">
                   E-State Real Estate Company excels in delivering innovative,
                   eco-friendly living solutions, emphasizing sustainability and
@@ -93,8 +94,8 @@ const Banner = () => {
           >
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
-              <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">E-State</h1>
+              <div className="max-w-lg animate__animated animate__fadeInRight">
+                <h1 className="mb-5 text-5xl font-bold ">E-Estate</h1>
                 <p className="mb-5 font-poppins">
                   E-State Real Estate Company excels in delivering innovative,
                   eco-friendly living solutions, emphasizing sustainability and

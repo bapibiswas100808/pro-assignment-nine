@@ -4,6 +4,8 @@ import Home from "../Components/Home/Home";
 import About from "../Components/About/About";
 import UpdateUser from "../Components/UpdateUser/UpdateUser";
 import ProductDetail from "../Components/ProductDetail/ProductDetail";
+import Login from "../Components/Login/Login";
+import Register from "../Components/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <ProductDetail></ProductDetail>,
         loader: () => fetch("../data.json"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },

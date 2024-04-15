@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 import { AiFillProfile } from "react-icons/ai";
 import { IoIosBulb } from "react-icons/io";
@@ -59,12 +59,12 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white w-52 text-lg bg-[#0d1e50]"
+              className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow text-white w-52 text-lg bg-[#0d1e50]"
             >
               {navLinks}
             </ul>
           </div>
-          <a className="text-white text-xl lg:text-2xl font-roboto">E-State</a>
+          <a className="text-white text-xl lg:text-2xl font-roboto">E-Estate</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="flex gap-6 px-1 text-white text-lg">{navLinks}</ul>
@@ -82,9 +82,12 @@ const Header = () => {
               className="rounded-full"
             />
           </div>
-          <a className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto">
+          <Link
+            to="/login"
+            className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
+          >
             Log In
-          </a>
+          </Link>
         </div>
       </div>
     </div>
