@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const SingleProduct = ({ product }) => {
   return (
@@ -7,12 +8,12 @@ const SingleProduct = ({ product }) => {
         <img src={product.image} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
+        <h2 className="card-title font-poppins">
           {product.estate_title}
           <div className="badge badge-secondary">{product.segment_name}</div>
         </h2>
-        <p>{product.description}</p>
-        <p>Facilities:</p>
+        <p className="font-poppins">{product.description}</p>
+        <p className="text-xl font-semibold font-roboto">Facilities:</p>
         <div className="card-actions justify-center">
           <div className="badge badge-outline">{product.facilities[0]}</div>
           <div className="badge badge-outline">{product.facilities[1]}</div>
@@ -20,13 +21,15 @@ const SingleProduct = ({ product }) => {
         </div>
         <Link
           to={`/details/${product.id}`}
-          className="btn bg-[#ff3e55] mt-4 text-white hover:bg-primary"
+          className="btn bg-[#ff3e55] mt-4 text-white hover:bg-primary font-poppins"
         >
-          View Details
+          View Property
         </Link>
       </div>
     </div>
   );
 };
-
+SingleProduct.propTypes = {
+  product: PropTypes.object.isRequired,
+};
 export default SingleProduct;
