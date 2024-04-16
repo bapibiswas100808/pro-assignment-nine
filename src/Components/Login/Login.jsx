@@ -1,10 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -13,12 +17,24 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    if (password.length < 6) {
+      toast.error("Password Should be at least 6 character");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password Must Have an UpperCase letter");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("Password Must Have an LowerCase letter");
+      return;
+    }
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
+        toast.success("Successfully Logged In!");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
+        toast.error(err.message);
         console.error(err);
       });
   };
@@ -51,9 +67,15 @@ const Login = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
+                  <span
+                    className="cursor-pointer relative top-10 right-5"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+                  </span>
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
                   className="input input-bordered"

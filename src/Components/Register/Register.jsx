@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { createUser } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -11,12 +15,24 @@ const Register = () => {
     const email = form.get("emailName");
     const photoUrl = form.get("photoUrl");
     const password = form.get("passwordName");
+    if (password.length < 6) {
+      toast.error("Password Should be at least 6 character");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password Must Have an UpperCase letter");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("Password Must Have an LowerCase letter");
+      return;
+    }
     console.log(fullName, email, photoUrl, password);
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
+        toast.success("Registered Successfully!");
       })
       .catch((err) => {
+        toast.error(err.message);
         console.log(err);
       });
   };
@@ -73,9 +89,15 @@ const Register = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
+                  <span
+                    className="cursor-pointer relative top-10 right-5"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+                  </span>
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="passwordName"
                   placeholder="password"
                   className="input input-bordered"

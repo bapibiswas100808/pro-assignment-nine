@@ -81,20 +81,22 @@ const Header = () => {
           className="btn btn-ghost btn-circle avatar"
         ></div>
         <div className="navbar-end">
-          <div className="w-10 mr-3">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              className="rounded-full"
-            />
-          </div>
           {user ? (
-            <button
-              onClick={handleSignOut}
-              className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
-            >
-              Log Out
-            </button>
+            <div className="flex">
+              <div className="w-10 mr-3">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  className="rounded-full"
+                />
+              </div>
+              <button
+                onClick={handleSignOut}
+                className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
+              >
+                Log Out
+              </button>
+            </div>
           ) : (
             <Link
               to="/login"

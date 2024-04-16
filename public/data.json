@@ -2,7 +2,7 @@
   {
     "id": "001",
     "estate_title": "Luxury Lakefront Villa",
-    "segment_name": "Residential",
+    "segment_name": "TownHouse",
     "description": "Beautiful and serene lakefront villa with stunning views and modern amenities.",
     "price": "1,200,000",
     "Status": "For sale",
@@ -14,7 +14,7 @@
   {
     "id": "002",
     "estate_title": "Modern Downtown House",
-    "segment_name": "Commercial",
+    "segment_name": "Country",
     "description": "Sleek, modern condo in the heart of the city with easy access to public transportation and nightlife.",
     "price": "850,000",
     "Status": "For sale",
@@ -26,7 +26,7 @@
   {
     "id": "003",
     "estate_title": "Cozy Suburban Home",
-    "segment_name": "Residential",
+    "segment_name": "Country",
     "description": "Charming home in a quiet suburb, perfect for families, with a large backyard and spacious rooms.",
     "price": "650,000",
     "Status": "For sale",
@@ -38,7 +38,7 @@
   {
     "id": "004",
     "estate_title": "Executive High-Rise",
-    "segment_name": "Commercial",
+    "segment_name": "TownHouse",
     "description": "Luxurious high-rise suite in a prestigious building, ideal for top executives and professionals.",
     "price": "5000",
     "Status": "For rent",
@@ -50,7 +50,7 @@
   {
     "id": "005",
     "estate_title": "Beachfront Getaway",
-    "segment_name": "Residential",
+    "segment_name": "Country",
     "description": "Exclusive beachfront property with panoramic sea views, private beach access and high-end finishes.",
     "price": "2,500,000",
     "Status": "For sale",
@@ -62,7 +62,7 @@
   {
     "id": "006",
     "estate_title": "Country Farmhouse",
-    "segment_name": "Residential",
+    "segment_name": "Country",
     "description": "Historic farmhouse on a sprawling 10-acre estate with modern upgrades and rustic charm.",
     "price": "800,000",
     "Status": "For rent",
