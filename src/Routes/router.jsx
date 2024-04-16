@@ -6,6 +6,7 @@ import UpdateUser from "../Components/UpdateUser/UpdateUser";
 import ProductDetail from "../Components/ProductDetail/ProductDetail";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
       { path: "/update", element: <UpdateUser></UpdateUser> },
       {
         path: "/details/:id",
-        element: <ProductDetail></ProductDetail>,
+        element: (
+          <PrivateRoute>
+            <ProductDetail></ProductDetail>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../data.json"),
       },
       {

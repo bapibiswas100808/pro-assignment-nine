@@ -2,8 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 import { AiFillProfile } from "react-icons/ai";
 import { IoIosBulb } from "react-icons/io";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
   const navLinks = (
     <>
       <li>
@@ -82,12 +88,21 @@ const Header = () => {
               className="rounded-full"
             />
           </div>
-          <Link
-            to="/login"
-            className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
-          >
-            Log In
-          </Link>
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="px-3 py-1 text-white bg-[#ff3e55] rounded-lg font-roboto cursor-pointer"
+            >
+              Log In
+            </Link>
+          )}
         </div>
       </div>
     </div>
