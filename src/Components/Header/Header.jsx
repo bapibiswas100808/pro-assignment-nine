@@ -71,7 +71,12 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="text-white text-xl lg:text-2xl font-roboto">E-Estate</a>
+          <Link
+            to="/"
+            className="text-white text-xl lg:text-2xl font-roboto cursor-pointer"
+          >
+            E-Estate
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="flex gap-6 px-1 text-white text-lg">{navLinks}</ul>
@@ -84,7 +89,10 @@ const Header = () => {
         <div className="navbar-end">
           {user ? (
             <div className="flex">
-              <div className="w-10 mr-3">
+              <div
+                className="w-10 mr-3 tooltip tooltip-left"
+                data-tip={user?.displayName}
+              >
                 <img
                   alt="Tailwind CSS Navbar component"
                   src={
