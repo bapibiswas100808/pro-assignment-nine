@@ -1,8 +1,14 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Website Name : E-Estate
 
-Currently, two official plugins are available:
+### Live Url: https://pro-assignment-nine.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### About My Website:
+
+- Technology Used: React, Tailwind, DaisyUI
+- Npm Packages Used: Swiper Slider, AOS and Animate CSS
+- The website is Responsive for all devices
+- The website is Built on Firebase for Authentication
+- This Website is about real estate product selling
+- I used react-hot-toast for giving notification during authentication
