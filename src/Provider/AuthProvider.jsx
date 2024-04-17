@@ -6,25 +6,70 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
+import toast from "react-hot-toast";
 
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+  const updateUser = (name, image) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: image,
+    })
+      .then((res) => {
+        toast.success("User Profile Updated");
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+  const googleLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        toast.success("Logged in Successfully");
+        console.log(res.user);
+      })
+      .catch((err) => {
+        toast.error(err.message);
+        console.log(err);
+      });
+  };
+  const githubLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider)
+      .then((res) => {
+        toast.success("Logged in Successfully");
+        console.log(res.user);
+      })
+      .catch((err) => {
+        toast.error(err.message);
+        console.log(err);
+      });
+  };
   const logOut = () => {
     setLoading(true);
+    setUser(null);
     return signOut(auth);
   };
   useEffect(() => {
@@ -36,7 +81,17 @@ const AuthProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
-  const authInfo = { user, loading, createUser, logOut, signIn };
+  const authInfo = {
+    user,
+    setUser,
+    loading,
+    createUser,
+    logOut,
+    signIn,
+    googleLogin,
+    githubLogin,
+    updateUser,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

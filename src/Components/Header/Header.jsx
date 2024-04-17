@@ -28,6 +28,7 @@ const Header = () => {
           <span className="font-poppins">About</span>
         </NavLink>
       </li>
+
       <li>
         <NavLink className="flex items-center" to="/update">
           <span>
@@ -86,7 +87,11 @@ const Header = () => {
               <div className="w-10 mr-3">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  src={
+                    user?.photoURL
+                      ? user.photoURL
+                      : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  }
                   className="rounded-full"
                 />
               </div>

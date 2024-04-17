@@ -1,7 +1,50 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const UpdateUser = () => {
+  const { user, updateUser } = useContext(AuthContext);
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const name = e.target.userName.value;
+    const image = e.target.userPhoto.value;
+    updateUser(name, image);
+  };
   return (
-    <div>
-      <h2>This is update </h2>
+    <div className="max-w-[1170px] mx-auto py-10">
+      <p className="text-center mb-2 font-poppins text-2xl">
+        Hi! {user?.displayName}
+      </p>
+      <div className="flex justify-center">
+        <img
+          className="max-h-[100px] rounded-full mb-5"
+          src={user?.photoURL}
+          alt=""
+        />
+      </div>
+      <div className="flex justify-center">
+        <form onSubmit={handleUpdate}>
+          <input
+            className="border p-2 rounded-lg mb-2 min-w-[300px] lg:min-w-[500px]"
+            name="userName"
+            type="text"
+            defaultValue={user?.displayName}
+          />
+          <br />
+          <input
+            className="border p-2 rounded-lg mb-2 min-w-[300px] lg:min-w-[500px]"
+            name="userPhoto"
+            type="text"
+            defaultValue={user?.photoURL}
+          />
+          <br />
+          <button
+            type="submit"
+            className="px-3 py-1 bg-[#ff3e55] hover:bg-primary text-white rounded-lg"
+          >
+            Update Info
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

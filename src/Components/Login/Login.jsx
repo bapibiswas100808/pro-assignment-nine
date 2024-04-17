@@ -9,7 +9,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -100,11 +100,11 @@ const Login = () => {
               <div className="flex gap-5">
                 <p className="flex items-center gap-3">
                   <span>Google:</span>
-                  <FaGoogle className="cursor-pointe" />
+                  <FaGoogle onClick={googleLogin} className="cursor-pointer" />
                 </p>
                 <p className="flex items-center gap-3">
                   <span>Github:</span>
-                  <FaGithub className="cursor-pointer" />
+                  <FaGithub onClick={githubLogin} className="cursor-pointer" />
                 </p>
               </div>
             </div>
