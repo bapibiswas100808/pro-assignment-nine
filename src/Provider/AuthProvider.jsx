@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
       displayName: name,
       photoURL: image,
     }).then(() => {
-      setUser({ ...user, userName: name, photoURL: image });
+      setUser({ ...user, displayName: name, photoURL: image });
       setLoading(false);
     });
   };
