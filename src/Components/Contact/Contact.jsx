@@ -35,7 +35,7 @@ const Contact = () => {
                   123-4567
                 </p>
               </div>
-              <div className="flex gap-4 mt-4 text-2xl">
+              <div className="flex gap-4 mt-4 text-2xl justify-center lg:justify-start">
                 <span>
                   <FaFacebook className="text-[#0866FF] cursor-pointer" />
                 </span>

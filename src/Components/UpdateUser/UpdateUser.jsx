@@ -21,7 +21,7 @@ const UpdateUser = () => {
       </p>
       <div className="flex justify-center">
         <img
-          className="max-h-[100px] rounded-full mb-5"
+          className="max-h-[100px] rounded-lg mb-5"
           src={user?.photoURL}
           alt=""
         />
