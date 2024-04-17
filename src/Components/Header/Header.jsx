@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 import { AiFillProfile } from "react-icons/ai";
 import { IoIosBulb } from "react-icons/io";
+import { IoMdContact } from "react-icons/io";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -40,7 +41,7 @@ const Header = () => {
       <li>
         <NavLink className="flex items-center" to="/contact">
           <span>
-            <AiFillProfile className="me-1" />
+            <IoMdContact className="me-1 text-xl" />
           </span>
           <span className="font-poppins">Contact Us</span>
         </NavLink>
