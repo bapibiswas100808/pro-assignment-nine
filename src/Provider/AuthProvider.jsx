@@ -13,7 +13,6 @@ import {
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import toast from "react-hot-toast";
-
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
@@ -28,14 +27,7 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: image,
-    })
-      .then((res) => {
-        toast.success("User Profile Updated");
-        console.log(res.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    });
   };
   const signIn = (email, password) => {
     setLoading(true);

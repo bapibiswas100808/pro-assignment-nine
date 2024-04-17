@@ -4,10 +4,10 @@ const Footer = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 text-white max-w-[1170px] mx-auto mb-5 text-center space-y-5">
         <nav className="font-poppins text-lg flex flex-col mt-5">
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
+          <a className="link link-hover">Real State</a>
           <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Construction</a>
+          <a className="link link-hover">Engineering</a>
         </nav>
         <nav className="font-poppins text-lg flex flex-col">
           <h6 className="footer-title">Company</h6>

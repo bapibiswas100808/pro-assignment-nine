@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, updateUser } = useContext(AuthContext);
   const handleRegister = (e) => {
@@ -28,7 +29,11 @@ const Register = () => {
     console.log(fullName, email, photoUrl, password);
     createUser(email, password, fullName, photoUrl)
       .then((res) => {
-        updateUser(fullName, photoUrl).then().catch();
+        updateUser(fullName, photoUrl)
+          .then(() => {
+            navigate("/");
+          })
+          .catch();
         console.log(res.user);
         toast.success("Registered Successfully!");
       })

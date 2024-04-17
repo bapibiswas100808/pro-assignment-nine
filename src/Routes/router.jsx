@@ -7,11 +7,13 @@ import ProductDetail from "../Components/ProductDetail/ProductDetail";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorElement from "../Components/ErrorElement/ErrorElement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       { path: "/", element: <Home></Home> },
       { path: "/about", element: <About></About> },
