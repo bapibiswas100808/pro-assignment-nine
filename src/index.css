@@ -17,3 +17,15 @@
 #map {
   height: 180px;
 }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto", sans-serif;
+}
+p,
+li,
+button,
+a {
+  font-family: "Poppins", sans-serif;
+}

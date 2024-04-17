@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const UpdateUser = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -11,8 +12,12 @@ const UpdateUser = () => {
   };
   return (
     <div className="max-w-[1170px] mx-auto py-10">
+      <Helmet>
+        <title>E-Estate|Update</title>
+      </Helmet>
       <p className="text-center mb-2 font-poppins text-2xl">
-        Hi! {user?.displayName}
+        Hi! {user?.displayName} <br />
+        <span className="text-lg">{user?.email}</span>
       </p>
       <div className="flex justify-center">
         <img
@@ -20,6 +25,9 @@ const UpdateUser = () => {
           src={user?.photoURL}
           alt=""
         />
+      </div>
+      <div className="text-center mb-4 text-xl font-poppins font-semibold">
+        <p>You can Update your Info:</p>
       </div>
       <div className="flex justify-center">
         <form onSubmit={handleUpdate}>

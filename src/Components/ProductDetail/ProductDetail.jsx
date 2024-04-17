@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import "animate.css";
+import { Helmet } from "react-helmet-async";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -9,6 +10,9 @@ const ProductDetail = () => {
   );
   return (
     <div className="max-w-[1170px] mx-auto">
+      <Helmet>
+        <title>{requiredData.estate_title}|details</title>
+      </Helmet>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <div className="flex-1 space-y-4 animate__animated animate__fadeInLeft">

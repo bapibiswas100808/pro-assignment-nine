@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
       <footer className="py-4 border-t bg-[#0d1e50] max-w-[1170px] mx-auto text-white px-3 lg:px-0">
         <p className="text-xl text-center">
-          T-State <br />
+          E-Estate <br />
           Providing reliable Service since 2002
         </p>
       </footer>

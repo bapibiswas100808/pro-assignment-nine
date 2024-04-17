@@ -37,6 +37,14 @@ const Header = () => {
           <span className="font-poppins">Update Profile</span>
         </NavLink>
       </li>
+      <li>
+        <NavLink className="flex items-center" to="/contact">
+          <span>
+            <AiFillProfile className="me-1" />
+          </span>
+          <span className="font-poppins">Contact Us</span>
+        </NavLink>
+      </li>
     </>
   );
   return (
